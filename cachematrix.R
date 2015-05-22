@@ -1,9 +1,9 @@
-##  I prefer to catch the matrix, set, get it and  inverse store both.
+##  I prefer to catch the matrix, set, get ,  inverse and store both.
 ## We can catch the matrix, inverse and store it
 
 ##  working directory is set and the file is read. 
 
-## makecath matrix will catch a matrix and inverse the matrix.
+## makecatchmatrix will catch a matrix and inverse the matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
   m<-NULL
