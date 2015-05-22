@@ -1,20 +1,18 @@
-##  I prefer to catch the matrix, set, get ,  inverse and store both.
-## We can catch the matrix, inverse and store it
-
-##  working directory is set and the file is read. 
-
-## makecatchmatrix will catch a matrix and inverse the matrix.
+## makecatchedmatrix will catch a matrix and inverse the matrix.
+##  I prefer to catch the matrix, set, get ,  inverse and store them.
 
 makeCacheMatrix <- function(x = matrix()) {
   m<-NULL
+  #initiallising the vectors
   set<-function(y){
     x<<-y
     m<<-NULL
+       data<<-NULL
   }
-  
-  get<-function() x
   #store the matrix
+  get<-function() x
   setmatrix<-function ()x
+  #return to matrix
   getmatrix<-function() x
   ## inverse of the matrix
   catchinverse()<-function(solve) m<-solve
@@ -27,11 +25,8 @@ makeCacheMatrix <- function(x = matrix()) {
        catchinverse=catchinverse
        getinverse=getinverse)
 }
-
-
 ## #cacheSolve: This function computes the inverse of the 
 #special "matrix" returned by makeCacheMatrix 
-
 
 cacheSolve <- function(x=matrix(), ...) {
   #get the catched value
@@ -44,11 +39,10 @@ cacheSolve <- function(x=matrix(), ...) {
   #otherwise, catch the matix
   data<-x$getmatrix()
   #get the inverse of the matrix
-  dat1<-solve(data, ...)
-  Y$catchinverse(dat1)
+  m<-solve(data, ...)
+  x$catchinverse(m)
   #return the value
-  dat1
-
+  m
   
   ## Return a matrix that is the inverse of 'x'
 }
